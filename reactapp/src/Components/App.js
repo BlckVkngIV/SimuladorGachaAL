@@ -1,26 +1,27 @@
 import React from 'react';
-import Header from './Components/Header';
+import Header from '../shared/layout/Header';
 import './App.css';
-import Content from './shared/layout/Content';
-import Footer from './shared/layout/Footer';
+import Footer from '../shared/layout/Footer';
+import Content from '../shared/layout/Content';
+import Navbar from './Navbar/Navbar';
+import {element} from 'prop-types';
 
-import {Element} from 'prop-types';
 
-
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <Header className="App-header"/>
-        <Content >
-          {props.children}
-        </Content>
-      <Footer className="App-footer"/>
+      <Navbar />
+      <Content >
+        {props.children}
+      </Content>
+      <Footer />
     </div>
   );
+
 }
 
 App.propTypes = {
-  children: Element.isRequired,
-};
+  children: element.isRequired,
+}
 
 export default App;
