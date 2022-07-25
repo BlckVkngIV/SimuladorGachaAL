@@ -1,9 +1,20 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import './Ship.css';
 
 
 export default function Ship(props){
     const {name,nation,image, wiki, shipClass, rarity} = props;
+    const [isFavorite, setIsFavorite] = useState(false);
+
+
+    //Reload function
+    function reload() {
+        window.location.reload();
+    }
+
+
+
 
     return(
         <div className= 'col-3'>
@@ -23,6 +34,33 @@ export default function Ship(props){
                         <strong>Rarity: </strong>{rarity}
                     </p>
                     <a href={wiki} className='btn btn-primary'>Wiki</a>
+                </div>
+                <div className='card-footer'>
+                    {/*Favorite checkbox*/}
+                    <input
+                        type='checkbox'
+                        name='isFavorite'
+                        id='isFavorite'
+                        value={isFavorite}
+                        onChange={() => {
+                            setIsFavorite(!isFavorite);
+                            //Add ship to favorites
+                            if (isFavorite === false) {
+                                const favorites = JSON.parse(localStorage.getItem('favorites'));
+                                favorites.push(props);
+                                localStorage.setItem('favorites', JSON.stringify(favorites));
+                            }
+                            //Remove ship from favorites
+                            if (isFavorite === true) {
+                                const favorites = JSON.parse(localStorage.getItem('favorites'));
+                                const newFavorites = favorites.filter(ship => ship.name !== name);
+                                localStorage.setItem('favorites', JSON.stringify(newFavorites));
+                                reload();
+                            }
+                        }
+                        }
+                    />
+                    <label htmlFor='isFavorite'>Favorite</label>
                 </div>
             </div>
         </div>

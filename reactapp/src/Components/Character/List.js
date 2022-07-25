@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Input} from '@chakra-ui/react';
 import Ship from './Ship';
+import './List.css';
 
 
 export default function List(){
