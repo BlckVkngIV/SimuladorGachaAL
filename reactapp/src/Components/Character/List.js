@@ -15,6 +15,7 @@ useEffect(() => {
         const ships = await data.json();
         setapiShips(ships);
         setfilteredShips(ships);
+        localStorage.setItem('ships', JSON.stringify(ships));
     }
     fetchData();
 }, [apiShips.length]);
@@ -37,15 +38,15 @@ return(
         />
         
         <div className="row">
-            {filteredShips.map((ship) =>(
+            {filteredShips.map((ship, value) =>(
                 <Ship 
-                    key={ship.id}
+                    key={value}
                     name={ship.name}
                     shipClass={ship.type}
                     nation={ship.nation}
                     image={ship.image}
                     wiki={ship.wikiUrl}
-                    description={ship.description}
+                    rarity={ship.rarity}
                 />
             ))}
         </div>
