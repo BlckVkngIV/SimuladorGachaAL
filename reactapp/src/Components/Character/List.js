@@ -23,8 +23,10 @@ useEffect(() => {
 
 return(
     <div>
+        <div className='upper-row'>
         <h2>Ships:</h2>
         <Input
+            className='search-input'
             type="text"
             placeholder="Search..."
             onChange={(e) => {
@@ -37,7 +39,7 @@ return(
             }
             }
         />
-        
+        </div>
         <div className="row">
             {filteredShips.map((ship, value) =>(
                 <Ship 

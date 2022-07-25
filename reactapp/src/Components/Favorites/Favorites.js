@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Input } from '@chakra-ui/react';
 import Ship from '../Character/Ship';
 import './Favorites.css';
 
@@ -17,9 +16,11 @@ function Favorites(props) {
 
     return (
         <div>
+            <h1>Favorites:</h1>
             <div className="row">
                 {favorites.map((ship, value) => (
-                    <Ship key={value}
+                    <Ship 
+                        key={value}
                         name={ship.name}
                         shipClass={ship.type}
                         nation={ship.nation}

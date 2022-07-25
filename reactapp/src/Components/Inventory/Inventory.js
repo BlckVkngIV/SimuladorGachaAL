@@ -22,7 +22,7 @@ function Inventory(props) {
 
     return (
         <div>
-            <h1>Inventory</h1>
+            <h1>Inventory:</h1>
             <div className="row">
                 {shipRoll.map((ship) => (
                     <Ship key={ship.id}

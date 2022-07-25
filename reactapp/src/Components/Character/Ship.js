@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Ship.css';
 
 
@@ -13,9 +13,6 @@ export default function Ship(props){
         window.location.reload();
     }
 
-
-
-
     return(
         <div className= 'col-3'>
             <div className='card-main'>
@@ -25,19 +22,23 @@ export default function Ship(props){
                     className = 'card-img-top'
                 />
                 <div className = 'card-body'>
-                    <h3 className='card-title'>{name}</h3>
-                    <p className='card-text'>
-                        <strong>Nation: </strong>{nation}
-                        <br/>
-                        <strong>Class: </strong>{shipClass}
-                        <br/>
-                        <strong>Rarity: </strong>{rarity}
-                    </p>
-                    <a href={wiki} className='btn btn-primary'>Wiki</a>
+                        <h3 className='card-title'>{name}</h3>
+                    <div className='card-info'>
+                        <p className='card-text'>
+                            <strong>Nation: </strong>{nation}
+                            <br/>
+                            <strong>Class: </strong>{shipClass}
+                            <br/>
+                            <strong>Rarity: </strong>{rarity}
+                        </p>
+                        <a href={wiki} className='btn-primary'>Wiki</a>
+                    </div>
                 </div>
                 <div className='card-footer'>
                     {/*Favorite checkbox*/}
+                    <label className='isFavorite'>Favorite:</label>
                     <input
+                        className='favorite-checkbox'
                         type='checkbox'
                         name='isFavorite'
                         id='isFavorite'
@@ -60,7 +61,6 @@ export default function Ship(props){
                         }
                         }
                     />
-                    <label htmlFor='isFavorite'>Favorite</label>
                 </div>
             </div>
         </div>
