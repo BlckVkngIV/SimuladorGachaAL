@@ -1,0 +1,29 @@
+h2{
+    font-size: 2.5em;
+    margin: 0.5em 0;
+}
+
+.search-input {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input:focus {
+    border: 1px solid #00bcd4;
+    outline: none;
+}
+
+.search-input:hover {
+    border: 1px solid #00bcd4;
+}
+
+.row {
+    width: 99.9%;
+}

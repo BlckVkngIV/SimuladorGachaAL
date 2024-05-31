@@ -24,6 +24,7 @@ function Counter(props) {
         setGachaCurrency(0);
         setshipRoll({shipRoll: []});
 
+        localStorage.setItem('favorites', JSON.stringify([]));
         localStorage.setItem('shipRoll', JSON.stringify([]));
         localStorage.setItem('gachaCurrency', 0);
         window.location.reload();

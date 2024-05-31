@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Input} from '@chakra-ui/react';
 import Ship from './Ship';
+import './List.css';
 
 
 export default function List(){
@@ -22,8 +23,10 @@ useEffect(() => {
 
 return(
     <div>
+        <div className='upper-row'>
         <h2>Ships:</h2>
         <Input
+            className='search-input'
             type="text"
             placeholder="Search..."
             onChange={(e) => {
@@ -36,7 +39,7 @@ return(
             }
             }
         />
-        
+        </div>
         <div className="row">
             {filteredShips.map((ship, value) =>(
                 <Ship 

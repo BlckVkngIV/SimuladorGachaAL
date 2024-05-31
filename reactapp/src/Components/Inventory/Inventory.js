@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Ship from '../Character/Ship';
 
+
 function Inventory(props) {
     const [shipRoll, setshipRoll] = useState([]);
 
@@ -21,7 +22,7 @@ function Inventory(props) {
 
     return (
         <div>
-            <h1>Inventory</h1>
+            <h1>Inventory:</h1>
             <div className="row">
                 {shipRoll.map((ship) => (
                     <Ship key={ship.id}
